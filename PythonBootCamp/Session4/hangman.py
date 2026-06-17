@@ -1,30 +1,97 @@
-# step 1
-from random import random
 from secrets import choice
 
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''',
+'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''',
+'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''',
+'''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''',
+'''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''',
+'''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''',
+'''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''']
+
+
 word_list = ["ardvark","baboon","camel"]
-# random selection of world list
 chosen_word = choice( word_list )
 # print( chosen_word )
-chosen_word_length = len(chosen_word)
-# print(chosen_word_length)
-#print("-"*chosen_word_length)
+lives = 6
+
+#chosen word test, if you want fill free to remove it
 print(f"Psst, the word is: {chosen_word}")
 display = []
+chosen_word_length = len(chosen_word)
 for i in range(chosen_word_length):
     display +="_"
 print(display)
 end_of_game = False
+
+
 while not end_of_game:
-    guest = input ( "Guess a letter: " ).lower ()
+    guess = input ( "Guess a letter: " ).lower ()
 
     for position in range(chosen_word_length):
         letter = chosen_word[position]
-        if letter == guest:
+        if letter == guess:
             display[position] = letter
+
+    if  guess not in display:
+        lives -=1
+        if lives == 0:
+            end_of_game = True
+            print("you lose...")
 
 
     print(display)
     if "_" not in display:
         end_of_game = True
-        print("You win.")
+        print("You win :)")
+
+
+    print(stages[lives])
