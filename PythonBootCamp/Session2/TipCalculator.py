@@ -4,7 +4,7 @@ print("Welcome to tip calculator:")
 
 TotalBill = float(input("Enter total bill: $"))
 HowManyPeople = int(input("Enter how many people: "))
-TipPercentage = int(input("Enter tip percentage number: 10 15 20 25: "))
+TipPercentage = int(input("Enter tip percentage number_input: 10 15 20 25: "))
 
 
 if TipPercentage in [10, 15, 20, 25]:

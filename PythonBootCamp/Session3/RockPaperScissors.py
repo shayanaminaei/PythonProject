@@ -9,7 +9,7 @@ choices = {
 }
 
 user_choice = input(
-    "Please enter your choice by number {1) Rock 2) Paper 3) Scissors}: "
+    "Please enter your choice by number_input {1) Rock 2) Paper 3) Scissors}: "
 )
 
 if user_choice not in choices:

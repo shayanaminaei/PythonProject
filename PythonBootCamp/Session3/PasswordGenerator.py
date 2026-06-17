@@ -14,8 +14,8 @@ password_length = int(input("Enter the password length: "))
 # check loop for inputs
 while True:
 
-    symbol_count = int(input("Enter the number of symbols: "))
-    number_count = int(input("Enter the number of numbers: "))
+    symbol_count = int(input("Enter the number_input of symbols: "))
+    number_count = int(input("Enter the number_input of numbers: "))
 
     if symbol_count + number_count <= password_length:
         break
